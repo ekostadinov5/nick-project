@@ -1,0 +1,42 @@
+version: "3"
+services:
+  db:
+    image: "postgres"
+    container_name: "postgres"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=nick_project
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-db-data:/var/lib/postgresql/data
+
+  backend:
+    image: "nick-project-backend"
+    container_name: "nick-project-backend"
+    environment:
+      - PORT=8080
+      - DB_HOSTNAME=db
+      - DB_PORT=5432
+      - DB_DATABASE=nick_project
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - MULTIPART_MAX_REQUEST_SIZE=50MB
+      - MULTIPART_MAX_FILE_SIZE=50MB
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    container_name: "nick-project-frontend"
+    build:
+      context: .
+      dockerfile: nick-project-frontend/Dockerfile
+      args:
+        - REACT_APP_BACKEND_ENDPOINT=https://f1a502a4a69b.ngrok.io/be
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

@@ -1,0 +1,234 @@
+
+/* General */
+html {
+    font-size: medium;
+    scroll-behavior: smooth;
+}
+
+html, body, section {
+    min-height: 100vh;
+}
+
+.image-fitted {
+    width: 100%;
+    height: 100%;
+}
+
+.remove-button-box-shadow {
+    box-shadow: none !important;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Header */
+#navbarLogo {
+    width: 50px;
+    height: 50px;
+}
+
+#notifications {
+    width: 100%;
+    max-height: 35vh;
+    overflow-y: scroll;
+}
+
+@media (min-width: 992px) {
+    #notifications {
+        width: 250px;
+        max-height: 45vh;
+        overflow-y: scroll;
+    }
+}
+
+/* Help buttons */
+#help {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1234;
+}
+
+@media (min-width: 992px) {
+    #help {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1234;
+    }
+}
+
+/* Back to top button */
+.scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1234;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+    opacity: 0.5;
+}
+
+.scrollTop:hover {
+    opacity: 1;
+}
+
+/* Custom right and left title */
+[data-title-right]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.7s;
+    visibility: visible;
+}
+
+[data-title-right]:after {
+    content: attr(data-title-right);
+    position: absolute;
+    bottom: -0.7em;
+    left: 10%;
+    padding: 4px 4px 4px 8px;
+    color: #222;
+    white-space: nowrap;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 4px #222;
+    -webkit-box-shadow: 0 0 4px #222;
+    box-shadow: 0 0 4px #222;
+    background: white;
+    opacity: 0;
+    z-index: 99999;
+    visibility: hidden;
+    font-weight: normal;
+}
+
+[data-title-right] {
+    position: relative;
+}
+
+[data-title-left]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.7s;
+    visibility: visible;
+}
+
+[data-title-left]:after {
+    content: attr(data-title-left);
+    position: absolute;
+    bottom: -0.7em;
+    right: 10%;
+    padding: 4px 4px 4px 8px;
+    color: #222;
+    white-space: nowrap;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 4px #222;
+    -webkit-box-shadow: 0 0 4px #222;
+    box-shadow: 0 0 4px #222;
+    background: white;
+    opacity: 0;
+    z-index: 99999;
+    visibility: hidden;
+    font-weight: normal;
+}
+
+[data-title-left] {
+    position: relative;
+}
+
+/* Categories */
+#categories {
+    position: relative;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#collapseCategories {
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+@media (min-width: 992px) {
+    #categories {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 100px;
+        z-index: 1234;
+        border-bottom: none;
+    }
+
+    #collapseCategories {
+        height: 79vh;
+        overflow-y: scroll;
+    }
+
+    .collapse-toggler {
+        visibility: hidden;
+    }
+
+    .border-right-lg {
+        border-right: 1px solid #dee2e6 !important;
+    }
+}
+
+/* Recipe */
+.carousel-image {
+    height: 65vh;
+}
+
+#praisesAndComments {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+
+/* Create recipe */
+#createRecipeSection {
+    background: url(../../assets/img/create_recipe_bg_img.jpg) no-repeat;
+    background-size: cover
+}
+
+/* User */
+#userInfo {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+@media (min-width: 992px) {
+    #userInfo {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 100px;
+        z-index: 1234;
+        border-bottom: none;
+        overflow-y: scroll;
+        height: 85vh;
+    }
+}
+
+/* Login */
+#loginSection{
+    background: url(../../assets/img/login_bg_img.jpg) no-repeat;
+    background-size: cover
+}
+
+/* Register */
+#registerSection{
+    background: url(../../assets/img/register_bg_img.jpg) no-repeat;
+    background-size: cover
+}

@@ -1,0 +1,12 @@
+{
+  "short_name": "Рецепти",
+  "name": "Апликација за споделување на рецепти",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}
